@@ -21,9 +21,7 @@
     <div>
         {{#each coffees}}
         <div>
-        <!-- <h1 id="OrderNo"></h1> -->
         
-        <input type="button" value="Making Order" id="making"> 
         <p>Order No.: {{@key}}</p>
         <p>Size: {{size}}</p>
         <p>Caffeine: {{caffeine}}</p>
@@ -31,16 +29,21 @@
         <p>Sugar: {{sugar}}</p>
         <p>Payment: {{payment}}</p>
         <p><p>Collection Type: {{collection}}</p></p>
-        
-        <br><input type="button" value="Order Finished" id="finished">
 
         <p><hr>
         </div>
+
         {{/each}}
     </div>
 </script>
 
-
+<div>
+  <button>Making</button>
+  <button>Completed</button>
+  <button>Delivered</button>
+</div>
+<input id = "result-box" type="text" value="click a button">
+ 
 
 <script src="js/appA.js"></script>
 </body>

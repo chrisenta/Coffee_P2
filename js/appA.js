@@ -1,5 +1,6 @@
 	var data = new Firebase("https://te-papa-cafe.firebaseio.com/");
 
+
 	data.on("value", function(snapshot) {
 		var context = snapshot.val();
   		console.log(context);
@@ -20,6 +21,7 @@
 		sugar: null,
 		payment: null,
 		collection: null,
+		status: "Making",
 		}
 
 	coffee.size = $('input:radio[name=size]:checked').val();
@@ -28,39 +30,29 @@
 	coffee.sugar = $('input:radio[name=sugar]:checked').val();
 	coffee.payment = $('input:radio[name=cc]:checked').val();
 	coffee.collection = $('input:radio[name=collection]:checked').val();
+	coffee.status = "Making";
 
 	console.log(coffee);
 	data.child("coffees").push(coffee);
 
+	// data.child("coffees").on('value', function(child_snapshot) {
+
+	// console.log(child_snapshot);
+	// });
 	});
 
+// function displayVals() {
+//   var statusValues = $( "#status" ).val();
+//   $("results").html( "<b>Status:</b> " + statusValues );
+// }
+ 
+// $( "select" ).change( displayVals );
+// displayVals();
 
-
-
-	// $("making").click(function(){
-	// 	var making = coffee.child("status");
-	// 	making.update({
-	// 		"making": "Making Coffee"
-	// 	})
-
-	// 	making.status = $('')
-		
-	// 	console.log(making);
-
-	// });
-
-// var date = new Date();
-// var components = [
-//     date.getYear(),
-//     date.getMonth(),
-//     date.getDate(),
-//     date.getHours(),
-//     date.getMinutes(),
-//     date.getSeconds(),
-//     date.getMilliseconds()
-// ];
-
-// var OrderNo = components.join("");
+$( "button" ).click(function() {
+  var text = $( this ).text();
+  $( "#result-box" ).val( text );
+});
 
 //Geolocation & Google Maps
 
@@ -98,12 +90,3 @@ if (navigator.geolocation) {
   error('Geo Location is not supported');
 }
 
-// function initialize() {
-//   var mapProp = {
-//     center:new google.maps.LatLng(51.508742,-0.120850),
-//     zoom:5,
-//     mapTypeId:google.maps.MapTypeId.ROADMAP
-//   };
-//   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-// }
-// google.maps.event.addDomListener(window, 'load', initialize);

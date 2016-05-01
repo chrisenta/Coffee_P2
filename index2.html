@@ -18,18 +18,25 @@
     <h1><strong>SUCCESS!</strong></h1><hr>
     <h2>Your Order Has Been Placed.</h2>
     <p>Current Status:</p>
+    <div id="yield">
+</div>
     <script id="home-template" type="text/x-handlebars-template">
     <div>
         {{#each coffees}}
         <div>
-        <p>Key: {{@key}} </p>
-
+        <p>{{@key}}</p>
+        <p id="results"> </p>
         <p><hr>
         </div>
+
         {{/each}}
     </div>
+
 </script>
 </div>
+
+<input id = "result-box" type="text" value="click a button">
+
 <article>
 </article>
 <script src="js/appA.js"></script>
