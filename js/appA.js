@@ -88,6 +88,5 @@ function drawMap(LatLng) {
       title:"You are here!"
   });
   }
-}
 
 
