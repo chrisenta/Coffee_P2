@@ -15,6 +15,10 @@ div {
 	margin: 40px auto;
 }
 
+input[type="radio"] {
+    display: none;
+}
+
 input[type=button] {
 	font-family: 'Quicksand', sans-serif;
 	letter-spacing: 2px;
