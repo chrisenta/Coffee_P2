@@ -44,33 +44,17 @@ $( "button" ).click(function() {
 
 
 //Geolocation & Google Maps
-  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  var defaultPos = new google.maps.LatLng(-41.295502, 174.775796);
-var mapcanvas = document.createElement('div');
+
+function success(position) {
+  var mapcanvas = document.createElement('div');
   mapcanvas.id = 'mapcontainer';
   mapcanvas.style.height = '400px';
   mapcanvas.style.width = '600px';
 
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success);
-function success(position) {
-	drawMap(coords);
-}
-
-function fail(error) {
-	drawMap(defaultPos);
-}
-
-navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
-} else {
-        drawMap(defaultLatLng);  // No geolocation support, show default map
-    }
-  
   document.querySelector('article').appendChild(mapcanvas);
 
-
-function drawMap(LatLng) {
+  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  
   var options = {
     zoom: 15,
     center: coords,
@@ -87,6 +71,11 @@ function drawMap(LatLng) {
       map: map,
       title:"You are here!"
   });
-  }
+}
 
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success);
+} else {
+  error('Geo Location is not supported');
+}
 
