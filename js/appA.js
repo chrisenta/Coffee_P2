@@ -34,25 +34,14 @@
 
 	console.log(coffee);
 	data.child("coffees").push(coffee);
-
-	// data.child("coffees").on('value', function(child_snapshot) {
-
-	// console.log(child_snapshot);
-	// });
 	});
-
-// function displayVals() {
-//   var statusValues = $( "#status" ).val();
-//   $("results").html( "<b>Status:</b> " + statusValues );
-// }
- 
-// $( "select" ).change( displayVals );
-// displayVals();
 
 $( "button" ).click(function() {
   var text = $( this ).text();
   $( "#result-box" ).val( text );
 });
+
+
 
 //Geolocation & Google Maps
 
