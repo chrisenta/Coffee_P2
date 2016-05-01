@@ -36,11 +36,32 @@
 	data.child("coffees").push(coffee);
 	});
 
-$( "button" ).click(function() {
-  var text = $( this ).text();
-  $( "#result-box" ).val( text );
+// $( "button" ).click(function() {
+//   var text = $( this ).text();
+//   $( "#result-box" ).val( text );
+//   	var KEY = $(this).data("key");
+//   	  data.child("coffees" + KEY HERE).update({
+
+//   })
+// });
+
+$(".result").click(function() {
+	var text = $(this).text();
+	$("#result-box").val(text);
 });
 
+$(".coffeeMake").click(function(event){
+	console.log(event);
+	data.child("coffees").push("Making");
+});
+
+$(".coffeeDone").click(function(event){
+	console.log(event);
+});
+
+function functionTest(event){
+	console.log(event);
+}
 
 
 //Geolocation & Google Maps

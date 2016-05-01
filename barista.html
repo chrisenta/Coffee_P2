@@ -29,8 +29,8 @@
         <p>Sugar: {{sugar}}</p>
         <p>Payment: {{payment}}</p>
         <p><p>Collection Type: {{collection}}</p></p>
-
-        <p><hr>
+        <button onClick="functionTest(this)" class="coffeeMake" data-key="{{@key}}">Making</button>
+        <button onClick="functionTest(this)" class="coffeeDone" data-key="{{@key}}">Finished</button><p><hr>
         </div>
 
         {{/each}}
@@ -38,9 +38,9 @@
 </script>
 
 <div>
-  <button>Making</button>
-  <button>Completed</button>
-  <button>Delivered</button>
+  <button class="result">Making</button>
+  <button class="result">Completed</button>
+  <button class="result">Delivered</button>
 </div>
 <input id="result-box" type="text" value="In Progress">
  
