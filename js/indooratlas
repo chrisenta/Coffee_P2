@@ -1,0 +1,1 @@
+IndoorAtlas ia = IndoorAtlasFactory.createIndoorAtlas(context, listener, apiKey, apiSecret);
